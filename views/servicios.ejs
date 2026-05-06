@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><%= titulo %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Nuestros Servicios</h2>
+    <div class="gallery">
+      <% servicios.forEach(serv => { %>
+        <div class="card">
+          <img src="<%= serv.imagen %>" alt="<%= serv.nombre %>">
+          <h3><%= serv.nombre %></h3>
+          <p><%= serv.descripcion %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

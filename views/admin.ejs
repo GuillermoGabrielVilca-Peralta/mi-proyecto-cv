@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><%= titulo %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Panel de Control - Flota</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Vehículo</th>
+        <th>Conductor</th>
+        <th>Estado</th>
+        <th>Actualizar</th>
+      </tr>
+      <% flota.forEach(v => { %>
+        <tr>
+          <td><%= v.id %></td>
+          <td><%= v.vehiculo %></td>
+          <td><%= v.conductor %></td>
+          <td><%= v.estado %></td>
+          <td>
+            <form action="/admin/update" method="POST">
+              <input type="hidden" name="id" value="<%= v.id %>">
+              <select name="estado">
+                <option value="Disponible" <%= v.estado === 'Disponible' ? 'selected' : '' %>>Disponible</option>
+                <option value="En ruta" <%= v.estado === 'En ruta' ? 'selected' : '' %>>En ruta</option>
+                <option value="Mantenimiento" <%= v.estado === 'Mantenimiento' ? 'selected' : '' %>>Mantenimiento</option>
+              </select>
+              <button type="submit">Actualizar</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

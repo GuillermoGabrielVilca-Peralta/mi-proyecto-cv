@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><%= titulo %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Nosotros</h2>
+
+    <!-- Misión -->
+    <section>
+      <h3>Misión</h3>
+      <p>Nuestra misión es ofrecer un servicio de transporte confiable y eficiente, garantizando la seguridad de la flota y la satisfacción de nuestros clientes.</p>
+    </section>
+
+    <!-- Visión -->
+    <section>
+      <h3>Visión</h3>
+      <p>Ser la empresa líder en control de flotas y servicios logísticos, innovando constantemente y brindando soluciones integrales para nuestros clientes.</p>
+    </section>
+
+    <!-- Nuestro equipo -->
+    <section>
+      <h3>Nuestro Equipo</h3>
+      <div class="gallery">
+        <div class="card">
+          <img src="/images/serv1.jpg" alt="Juan Pérez">
+          <h4>Guillermo Vilca</h4>
+          <p>CEO & Fundador</p>
+        </div>
+        <div class="card">
+          <img src="/images/serv2.jpg" alt="María López">
+          <h4>Guillermo 2</h4>
+          <p>Gerente de Operaciones</p>
+        </div>
+        <div class="card">
+          <img src="/images/serv3.jpg" alt="Carlos Ramírez">
+          <h4>Guillermo 3</h4>
+          <p>Coordinador de Flota</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
